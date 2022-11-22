@@ -8,7 +8,7 @@
 
 function concatenate (firstString, secondString) {
 
-    return `${firstString + ' ' + secondString}`
+    return `${firstString} ${secondString}`
 
 }
 console.log(concatenate('Hello', 'World'))
