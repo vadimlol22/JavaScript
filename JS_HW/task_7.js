@@ -13,25 +13,17 @@
 
 function checkLetterCase (stringValue) {
     
-    if ((stringValue.length !== 1) && (typeof stringValue !== 'string')) {
-        console.log ('Data entered incorrectly')
+    if ((stringValue.length === 1) && (typeof stringValue === 'string')) {
 
-        return
+            if (stringValue === stringValue.toUpperCase()) {
+                return 'Оууу май, большая буква!'             
+            } 
+
+            return 'Нет уж, маленькие буквы - скучно'            
     }
-
-    if (stringValue.length === 1) {
-        if (stringValue === stringValue.toUpperCase()) {
-            console.log ('Оууу май, большая буква!')
-            return
-        } 
-
-        else if (stringValue !== stringValue.toUpperCase()) {
-            console.log ('Нет уж, маленькие буквы - скучно')
-            return
-        }
-    }
-
+    
+    return "Data not correct"
 
 }
 
-checkLetterCase ("A")
+console.log(checkLetterCase ("A"))

@@ -6,10 +6,8 @@
 
 function k (n, m) {
 
-    console.log(Math.sqrt(Math.pow(n, 2) + Math.pow(m, 2)));
-
-    return;
+    return Math.sqrt(Math.pow(n, 2) + Math.pow(m, 2));
 }
 
-k (3, 4)
+console.log(k (3, 4))
 

@@ -9,9 +9,9 @@
 
 
 function deleteChars(string) {
-    console.log(string.slice(1, -1));
-    return ;
+    
+    return string.slice(1, -1); 
 }
 
 
-deleteChars("Hello")
+console.log(deleteChars("Hello"))

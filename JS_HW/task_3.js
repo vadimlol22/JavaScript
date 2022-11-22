@@ -9,19 +9,17 @@
 
 function min (a, b) {
     if (a < b) {
-        console.log(a)
 
         return a;
     }
 
     if (a > b) {
-        console.log(b)
 
         return b;
     }
 
-    console.log('a equals b');
+    return 'a equals b';
 }
 
 
-min (2, 3)
+console.log(min (2, 3))

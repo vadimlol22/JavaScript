@@ -12,27 +12,25 @@
 
 
 
-function someFn (string) {
-    const toLowerCase = string.toLowerCase();
+function someFn (letter) {
+    const toLowerCase = letter.toLowerCase();
     const firstBigLetter = toLowerCase[0].toUpperCase() + toLowerCase.slice(1);
 
 
     
-    if (string.length % 2 !== 0) {
-        console.log(firstBigLetter);
-
-        return
+    if (letter.length % 2 !== 0) {
+        
+        return firstBigLetter;
     }
     
 
-    else if (string.length % 2 === 0) {
+    else if (letter.length % 2 === 0) {
         const lastBigLetters = firstBigLetter.slice(0, -1) + firstBigLetter.slice(-1).toUpperCase();
-        console.log(lastBigLetters);
-
-        return
+        
+        return lastBigLetters;
     }
 
 }
 
 
-someFn ("javaScript")
+console.log(someFn ("javaScript"))

@@ -10,15 +10,7 @@
 
 
 function isEven (number) {
-    if (number % 2 === 0) {
-        console.log ('true')
-        return true;
-    }
-
-    else {
-        console.log ('false')
-        return false;
-    }
+    return number % 2 === 0
 }
 
-isEven(4)
+console.log(isEven(4))

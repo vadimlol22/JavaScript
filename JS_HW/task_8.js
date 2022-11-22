@@ -7,8 +7,8 @@
 
 
 function concatenate (firstString, secondString) {
-const helloWorld = firstString + " " + secondString;
-    console.log (helloWorld)
+
+    return `${firstString + ' ' + secondString}`
 
 }
-concatenate ('Hello', 'World')
+console.log(concatenate('Hello', 'World'))

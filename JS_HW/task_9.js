@@ -13,21 +13,16 @@
 function checkStringLength (stringValue, numberValue) {
     if ((typeof stringValue === 'string') && (typeof numberValue === 'number' )) {
         if (stringValue.length > numberValue) {
-            console.log('String is too long!')
-            return
+            return 'String is too long!'
         }
 
-        else {
-            console.log(stringValue)
-            return
-        }
+
+        return stringValue
     }
 
-    else  {
-        console.log("Data entered incorrectly")    
-    }
+    return "Data entered incorrectly" 
 
 }
 
 
-checkStringLength('Hi', 2)
+console.log(checkStringLength('Hi', 2))

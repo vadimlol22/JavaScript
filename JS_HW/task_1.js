@@ -12,14 +12,15 @@
 
 
 function sayHello(name) {
-    if (name === "Mark") {
-        console.log('Hi,' + ' ' + name + '!')
+    if (name.toLowerCase() === "mark") {
+        return 'Hi,' + ' ' + name[0].toUpperCase() + name.slice(1) + '!';
+    }
 
-        return;
+    else if (name.toLowerCase() !== "mark") {
+        return 'Hello,' + ' ' + name[0].toUpperCase() + name.slice(1) + '!';
     }
 
 
-    console.log('Hello,', name + '!')
 }
 
-sayHello("Oleg")
+console.log(sayHello("mark"))
