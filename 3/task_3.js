@@ -11,5 +11,16 @@ const users = [
         id: 3,
         name: 'Max',
     },
-]
+];
+
+
+const renoveUsers = (users, badId) => {
+    return users.filter((user) => !badId.includes(user.id))
+}
+
+
+
+
+console.log(renoveUsers(users, [2, 3]))
+console.log(renoveUsers(users, [3]))
 
