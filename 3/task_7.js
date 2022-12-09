@@ -1,3 +1,9 @@
+// TODO: #7. Выведите массив ids для видео у которых рейтинг 5.0. В качестве входных 
+// данных используйте newReleases из предыдущего задания.
+//
+// // [675465, …]
+
+
 const newReleases = [
     {
         id: 70111470,
@@ -35,17 +41,19 @@ const newReleases = [
 
 
 
+const filterFilms = (films) => {
+    return films.reduce((result, {id, rating}) => {
+        const ratingValue = rating[0];
 
-const someFunction = (films) => films.map(({id, title}) => ({id, title}))
-    
+        if (ratingValue === 5) {
+            result.push(id);
+        }
 
-console.log(someFunction(newReleases))
+        return result
+    }, [])
+}
 
 
 
-// [
-//     { id: 70111470, title: 'Die Hard' },
-//     { id: 654356453, title: 'Bad Boys' },
-//     { id: 65432445, title: 'The Chamber' },
-//     { id: 675465, title: 'Fracture' }
-//   ]                                    <------------------------ ВЫВОД В КОНСОЛИ
+
+console.log(filterFilms(newReleases))
