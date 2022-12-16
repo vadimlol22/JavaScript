@@ -7,14 +7,13 @@
 
 
 const fn = (objs) => {
-    const badWords = Object.values(objs) === undefined;
-    return objs.filter((obj) => !badWords.includes(obj))
+    const entries = Object.entries(objs)
 
+    const fiterEntries = entries.filter(([key, value]) => value !== null && typeof value !== 'undefined')
+
+    return Object.fromEntries(fiterEntries)
 }
 
 
-// fn({ a: 1, b: 'Hello', c: null, z: undefined})
-// fn({ name: 'alex', age: 10, friends: [], address: null}) 
-
-
 console.log(fn({ a: 1, b: 'Hello', c: null, z: undefined}))
+console.log(fn({ name: 'alex', age: 10, friends: [], address: null}))

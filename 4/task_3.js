@@ -5,13 +5,27 @@
 
 
 const fn = (numbers) => {
-    return numbers.map((number) => {
-        if (number.lastIndexOf() > number[0]) {
-            return number
+    const meetingsCount = numbers.reduce((result, number) => {
+        if (!result[number]) {
+            result[number] = 0;
         }
 
-        return number.indexOf()
-    })
+        result[number] += 1;
+        return result;
+    }, {});
+
+    let max = 0;
+
+    for (const key in meetingsCount) {
+        const meetings = meetingsCount[key];
+
+        if (meetings > max) {
+            max = key
+        }
+    }
+
+    return max
 }
 
-console.log(fn([0,1,2,3]))
+console.log(fn([1,1,2,3]))
+console.log(fn([1,2,3,4,2]))
