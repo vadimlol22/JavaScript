@@ -7,16 +7,12 @@
 
 
 const findMissing = (number) => {
-   
     for(let i = 1; i < number.length ; i++) {
         if (i + 2 !== number[i] ) {
             return number[i] + 2
         }
     }
-    
-   
 }
-
 
 
 

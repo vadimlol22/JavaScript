@@ -1,21 +1,23 @@
-// const fn = (string) => {
-//     for(let i of string) {
-//         if (i === i.toUpperCase()) {
-//             return string.replaceAll(i,' '+i )
-//         }
-//     }
-// }
+// Complete the solution so that the function will break up camel casing, using a space between words.
+// EX: 
+// fn("camelCasing")  //  "camel Casing"
+// fn("identifier")  //  "identifier"
+// fn(‘helloMyDearFriend’) // ’hello My Dear Friend’
+
 
 const fn = (string) => {
-    for(let i = 0; i < string.length; i++) {
-        if (string[i] === string[i].toUpperCase()) {
-            return string.replace(string[i],' '+ string[i] )
+    const stringToArray = string.split('')
+    const makeSpace = stringToArray.reduce((result, letter) => {
+        if (letter === letter.toLowerCase()) {
+            result.push(letter)
+        } else {
+            result.push(' '+letter)
         }
-    }
+        return result
+    }, [])
+
+    return makeSpace.join('')
 }
-
-
-
 
 
 

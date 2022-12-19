@@ -1,3 +1,6 @@
+// ROMAN NUMERALS
+
+
 const solution = (string) => {
     const stringToArray = string.toUpperCase().split('')
     return numbers = stringToArray.reduce((result, currentValue) => {
