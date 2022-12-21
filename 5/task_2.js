@@ -6,10 +6,17 @@
 
 
 
-const findMissing = (number) => {
-    for(let i = 1; i < number.length ; i++) {
-        if (i + 2 !== number[i] ) {
-            return number[i] + 2
+const findMissing = (numbers) => {
+    for(let i = 0; i < numbers.length ; i++) {
+        const currentNumber = numbers[i];
+        const nextNumber = numbers[i+1];
+        const numberAfterNextMunber = numbers[i+2]
+
+        const currentDifference = nextNumber - currentNumber;
+        const nextDifference = numberAfterNextMunber - nextNumber;
+
+        if (currentDifference !== nextDifference) {
+            return currentNumber + nextDifference;
         }
     }
 }

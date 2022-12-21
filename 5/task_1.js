@@ -5,19 +5,38 @@
 // fn(‘helloMyDearFriend’) // ’hello My Dear Friend’
 
 
+
+const fn = (string) => {
+    let result = '';
+
+    for (const letter of string) {
+        const isBigLetter = letter === letter.toUpperCase();
+
+        if (isBigLetter) {
+            result += ` ${letter}`
+        } else {
+            result += letter
+        }
+    }
+
+    return result;
+} 
+
+
+
+
+
 const fn = (string) => {
     const stringToArray = string.split('')
     const makeSpace = stringToArray.reduce((result, letter) => {
-        if (letter === letter.toLowerCase()) {
-            result.push(letter)
-        } else {
-            result.push(' '+letter)
-        }
-        return result
-    }, [])
-
-    return makeSpace.join('')
+        letter === letter.toLowerCase() ? result.push(letter) : result.push(' '+letter);
+    return result
+}, [])
+return makeSpace.join('')
 }
+
+
+
 
 
 

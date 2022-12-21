@@ -2,33 +2,34 @@
 
 
 const solution = (string) => {
-    const stringToArray = string.toUpperCase().split('')
-    return numbers = stringToArray.reduce((result, currentValue) => {
-        if (currentValue === 'I') {
-            result += 1
-        }
-        if (currentValue === 'V') {
-            result += 5
-        }
-        if (currentValue === 'X') {
-            result += 10
-        }
-        if (currentValue === 'L') {
-            result += 50
-        }
-        if (currentValue === 'C') {
-            result += 100
-        }
-        if (currentValue === 'D') {
-            result += 500
-        }
-        if (currentValue === 'M') {
-            result += 1000
-        }
+    const romanianMap = {
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000,
+    };
 
-        return result
-    }, 0)
+    let result = 0;
+
+    for (let i = 0; i < string.length; i++) {
+        const currentSymbol = string[i];
+        const nextSymbol = string[i+1];
+
+        const currentValue = romanianMap[currentSymbol];
+        const nextValue = romanianMap[nextSymbol];
+
+        if (currentValue < nextValue) {
+            result -= currentValue
+        } else {
+            result += currentValue
+        }
+    }
+
+    return result
 }
 
 
-console.log(solution('XXI'))
+console.log(solution('XIX'))
