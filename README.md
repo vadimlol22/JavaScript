@@ -1,3 +1,3 @@
 ﻿# JavaScript
 
-### Here are my homework assignments for the period of study =)
+### Here are my homework assignments for the period of study 
