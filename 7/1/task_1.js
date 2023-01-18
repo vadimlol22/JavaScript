@@ -9,9 +9,15 @@
 
 const chunks = function(array, size) {
   const  result = [];
+
+  let stack = []
   for(let i = 0; i <= array.length; i++) {
-    if (array[i] !== 0) {
-      result.push(array.splice(0, size));
+
+    stack.push(array[i])
+
+    if (stack.length === size) {
+      result.push(stack);
+      stack = []
     }
   }
   return result
