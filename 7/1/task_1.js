@@ -11,11 +11,12 @@ const chunks = function(array, size) {
   const  result = [];
 
   let stack = []
+  
   for(let i = 0; i <= array.length; i++) {
 
     stack.push(array[i])
 
-    if (stack.length === size) {
+    if (stack.length === size || i === array.length - 1) {
       result.push(stack);
       stack = []
     }

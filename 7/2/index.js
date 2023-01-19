@@ -1,35 +1,36 @@
+// Результатом работы вашей функции должен быть массив пользователей. 
+// У каждого объекта пользователя должно появиться поле myPosts: [<в этом массиве будут посты, которые сделал этот пользователь>]. 
+// Поле массив, так как у одного пользователя может быть более 1-го поста.
+
+
+
+
 const someFn = async () => {
-    const postsRequest = await fetch('https://jsonplaceholder.typicode.com/posts').then((response) => 
-    response.json())
+    const URL = 'https://jsonplaceholder.typicode.com';
 
-    const usersRequest = await fetch('https://jsonplaceholder.typicode.com/users').then((response) => 
-    response.json())
+    try {
+        const [users, posts] = await Promise.all([
+            fetch(`${URL}/users`).then(resp => resp.json()),
+            fetch(`${URL}/posts`).then(resp => resp.json())
+        ]);
 
+        const UserIdPostMap = new Map();
 
-    const combine =  (postsRequest, usersRequest) => {
-        const postsMap = new Map();
+        for(const post of posts) {
+            if(!UserIdPostMap.has(post.userId)) {
+                UserIdPostMap.set(post.userId, [])
+            }
+            UserIdPostMap.get(post.userId).push(post);
+        }
 
-        postsRequest.forEach((comment) => {
-            postsMap.set(comment.userId , comment)
-        })
-        console.log(postsMap)
+        return users.map((user) => ({
+            ...user,
+            myPosts : UserIdPostMap.get(user.id)
+        }))
+
+    } catch(error) {
+        console.log('error')
     }
-
-    
-
-
-
-    // return  usersRequest((user) => {
-    //     return {
-    //         ...user,
-    //         myPosts : sortPosts.get(user.userId)
-    //     }
-    // })
-
-
-    // console.log(postsRequest)
-    // console.log(usersRequest)
-    // console.log(sortPosts)
 }
 
-someFn()
+console.log(someFn())
